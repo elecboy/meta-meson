@@ -18,7 +18,6 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0055-HACK-media-cec-silence-CEC-timeout-message.patch \
 	   file://0056-HACK-revert-mm-emit-tracepoint-when-RSS-changes.patch \
 	   file://0060-HACK-set-meson-g12-cma-pool-to-896MB.patch \
-	   file://0091-GX-update-TEXT_OFFSET-for-Amlogic-MESON-SoC.patch \
 	   file://01-10-soc-sunxi-convert-to-devm_platform_ioremap_resource.patch \
 	   file://dts-meson-add-watchdog-to-g12-common-dtsi.patch.txt.patch \
            "

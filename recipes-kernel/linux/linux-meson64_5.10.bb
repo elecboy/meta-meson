@@ -20,6 +20,8 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0060-HACK-set-meson-g12-cma-pool-to-896MB.patch \
 	   file://01-10-soc-sunxi-convert-to-devm_platform_ioremap_resource.patch \
 	   file://dts-meson-add-watchdog-to-g12-common-dtsi.patch.txt.patch \
+	   file://0001-add-qihua-s905d3-dts-based-on-khadas-vim3l.patch \
+	   file://0002-add-build-qihua-s905d3-dtb.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

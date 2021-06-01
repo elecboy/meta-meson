@@ -24,6 +24,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0002-add-build-qihua-s905d3-dtb.patch \
 	   file://0003-qihua-s905d3-eth-phy-add-reset-pin.patch \
 	   file://0004-qihua-s905d3-enable-otg-usb-host.patch \
+	   file://0005-qihua-s905d3-eth_wake_irq-add.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

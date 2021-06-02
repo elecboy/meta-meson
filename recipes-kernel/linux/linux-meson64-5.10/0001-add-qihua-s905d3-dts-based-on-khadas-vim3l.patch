@@ -1,7 +1,7 @@
 From 6f8dd5734afa7c2532ba83d6a8845d57c82a4e4f Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Tue, 1 Jun 2021 09:57:13 +0800
-Subject: [PATCH 1/9] add qihua-s905d3 dts, based on khadas vim3l
+Subject: [PATCH 1/5] add qihua-s905d3 dts, based on khadas vim3l
 
 ---
  .../boot/dts/amlogic/meson-qihua-s905d3.dtsi  | 497 ++++++++++++++++++

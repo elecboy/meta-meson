@@ -24,11 +24,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0002-add-build-qihua-s905d3-dtb.patch \
 	   file://0003-qihua-s905d3-eth-phy-add-reset-pin.patch \
 	   file://0004-qihua-s905d3-enable-otg-usb-host.patch \
-	   file://0005-qihua-s905d3-eth_wake_irq-add.patch \
-	   file://0006-qihua-s905d3-sdio-irq-enable.patch \
-	   file://0007-qihua-s905d3-add-sdio-irq-pin.patch \
-	   file://0008-qihua-s905d3-disable-sdio-irq-pin-cap.patch \
-	   file://0009-qihua-s905d3-sdio-up-max-freq.patch \
+	   file://0005-qihua-s905d3-sdio-up-max-freq.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

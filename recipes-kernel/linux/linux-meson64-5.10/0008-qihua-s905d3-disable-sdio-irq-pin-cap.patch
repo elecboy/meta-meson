@@ -1,23 +1,25 @@
-From 61a9c12fc04eef791b3353d5c0ba8a25dc151a9e Mon Sep 17 00:00:00 2001
+From a0ea6aeabb91d937c7cf017c94e043969cf5eb83 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
-Date: Tue, 1 Jun 2021 16:30:21 +0800
-Subject: [PATCH 4/9] qihua-s905d3 enable otg usb host
+Date: Wed, 2 Jun 2021 14:41:58 +0800
+Subject: [PATCH 8/9] qihua-s905d3 disable sdio irq pin cap
 
 ---
  arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
-index d83ca6fa1569..ed0bb98a23ce 100644
+index 173bc6f6eb89..2b359f0b88a3 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
-@@ -498,5 +498,5 @@ &usb3_pcie_phy {
+@@ -372,7 +372,7 @@ &sd_emmc_a {
+ 	pinctrl-names = "default", "clk-gate";
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+-	cap-sdio-irq;
++	#cap-sdio-irq;
  
- &usb {
- 	status = "okay";
--	dr_mode = "peripheral";
-+	dr_mode = "host";
- };
+ 	bus-width = <4>;
+ 	cap-sd-highspeed;
 -- 
 2.25.1
 

@@ -1,7 +1,7 @@
 From 296962a562b5b5784672d8c4ac49ed868cc5538a Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Wed, 2 Jun 2021 10:04:57 +0800
-Subject: [PATCH 7/7] qihua-s905d3 add sdio irq pin
+Subject: [PATCH 7/9] qihua-s905d3 add sdio irq pin
 
 ---
  arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi   | 8 ++++++++

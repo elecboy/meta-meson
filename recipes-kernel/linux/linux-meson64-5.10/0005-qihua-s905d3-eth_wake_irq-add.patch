@@ -1,7 +1,7 @@
 From 0620b94fefaadcea484bd60606304f13ba8a7ba9 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Tue, 1 Jun 2021 18:03:53 +0800
-Subject: [PATCH 5/7] qihua-s905d3 eth_wake_irq add
+Subject: [PATCH 5/9] qihua-s905d3 eth_wake_irq add
 
 ---
  arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 2 +-

@@ -1,23 +1,25 @@
-From 61a9c12fc04eef791b3353d5c0ba8a25dc151a9e Mon Sep 17 00:00:00 2001
+From 289daf48baa1bc90fdb57c8a88026653a70095dd Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
-Date: Tue, 1 Jun 2021 16:30:21 +0800
-Subject: [PATCH 4/9] qihua-s905d3 enable otg usb host
+Date: Wed, 2 Jun 2021 14:42:36 +0800
+Subject: [PATCH 9/9] qihua-s905d3 sdio up max freq
 
 ---
  arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
-index d83ca6fa1569..ed0bb98a23ce 100644
+index 2b359f0b88a3..f2faca410c61 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
-@@ -498,5 +498,5 @@ &usb3_pcie_phy {
+@@ -376,7 +376,7 @@ &sd_emmc_a {
  
- &usb {
- 	status = "okay";
--	dr_mode = "peripheral";
-+	dr_mode = "host";
- };
+ 	bus-width = <4>;
+ 	cap-sd-highspeed;
+-	max-frequency = <100000000>;
++	max-frequency = <200000000>;
+ 
+ 	non-removable;
+ 	disable-wp;
 -- 
 2.25.1
 

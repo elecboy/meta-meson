@@ -1,0 +1,30 @@
+From 29cbce2c9038dbe490385a36d2bc3ee8dde6a2a4 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Wed, 2 Jun 2021 09:07:19 +0800
+Subject: [PATCH 6/6] qihua-s905d3 sdio irq enable, freq up
+
+---
+ arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
+index ed0bb98a23ce..45eb132db46e 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
+@@ -372,10 +372,12 @@ &sd_emmc_a {
+ 	pinctrl-names = "default", "clk-gate";
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
++	cap-sdio-irq;
+ 
+ 	bus-width = <4>;
+ 	cap-sd-highspeed;
+-	max-frequency = <100000000>;
++	#max-frequency = <100000000>;
++	max-frequency = <200000000>;
+ 
+ 	non-removable;
+ 	disable-wp;
+-- 
+2.25.1
+

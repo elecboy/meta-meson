@@ -1,7 +1,7 @@
 From 61a9c12fc04eef791b3353d5c0ba8a25dc151a9e Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Tue, 1 Jun 2021 16:30:21 +0800
-Subject: [PATCH 4/5] qihua-s905d3 enable otg usb host
+Subject: [PATCH 4/6] qihua-s905d3 enable otg usb host
 
 ---
  arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 2 +-

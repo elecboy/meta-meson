@@ -1,7 +1,7 @@
 From cf906fe95a947b145c72151abe4d0061b491a62a Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Wed, 2 Jun 2021 15:54:23 +0800
-Subject: [PATCH 5/5] qihua-s905d3 sdio up max freq
+Subject: [PATCH 5/7] qihua-s905d3 sdio up max freq
 
 ---
  arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 2 +-

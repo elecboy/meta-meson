@@ -1,7 +1,7 @@
 From 02f07c13caf8adeb2ced42c9d8ca06749ab76cca Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Tue, 1 Jun 2021 09:57:37 +0800
-Subject: [PATCH 2/6] add build qihua-s905d3 dtb
+Subject: [PATCH 2/7] add build qihua-s905d3 dtb
 
 ---
  arch/arm64/boot/dts/amlogic/Makefile | 1 +

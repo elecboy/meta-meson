@@ -1,7 +1,7 @@
 From ad01fda1123100ed242b5287338b10354dceb4ca Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Tue, 1 Jun 2021 14:46:11 +0800
-Subject: [PATCH 3/6] qihua-s905d3 eth phy add reset pin
+Subject: [PATCH 3/7] qihua-s905d3 eth phy add reset pin
 
 ---
  arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 5 +++++

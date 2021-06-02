@@ -1,7 +1,7 @@
 From 01bd9bcb87835c25c272723628ca3f7f29702eb2 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Wed, 2 Jun 2021 09:45:15 +0800
-Subject: [PATCH 6/6] qihua-s905d3 sdio irq enable
+Subject: [PATCH 6/7] qihua-s905d3 sdio irq enable
 
 ---
  arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 1 +

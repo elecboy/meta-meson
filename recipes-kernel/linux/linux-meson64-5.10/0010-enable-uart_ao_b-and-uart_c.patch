@@ -1,0 +1,32 @@
+From 822b980bda490a6ce965f4ca4dc3fcf7790b10e1 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Fri, 4 Jun 2021 08:34:24 +0800
+Subject: [PATCH 10/10] enable uart_ao_b and uart_c
+
+---
+ .../boot/dts/amlogic/meson-sm1-sports-cle-v4.dts     | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index e2bd8f5d5106..d59bebb2a893 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -77,3 +77,15 @@ &sd_emmc_a {
+ &ethmac {
+ 	status = "disable";
+ };
++
++&uart_AO_B {
++        status = "okay";
++        pinctrl-0 = <&uart_ao_b_tx_8_pins>, <&uart_ao_b_rx_9_pins>;
++        pinctrl-names = "default";
++};
++
++&uart_C {
++       status = "okay";
++       pinctrl-0 = <&uart_c_pins>;
++       pinctrl-names = "default";
++};
+-- 
+2.25.1
+

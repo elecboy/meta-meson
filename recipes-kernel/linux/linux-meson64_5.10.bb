@@ -32,6 +32,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0010-enable-uart_ao_b-and-uart_c.patch \
 	   file://0011-update-qihua-s905d3-based-board-aliases.patch \
 	   file://0012-qihua-s905d3-regulator-fix.patch \
+	   file://0013-qihua-s905d3-SDIO-WiFi-freq-and-vqmmc-supply-fix.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

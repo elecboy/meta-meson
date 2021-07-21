@@ -1,0 +1,34 @@
+From d7427de9cb5dad098d23be1f6ec64195afc943c4 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Wed, 21 Jul 2021 10:23:11 +0800
+Subject: [PATCH 13/13] qihua s905d3 SDIO WiFi freq and vqmmc-supply fix
+
+---
+ arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
+index a37b456e9837..7046404da3f1 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-qihua-s905d3.dtsi
+@@ -335,7 +335,7 @@ &sd_emmc_a {
+ 
+ 	bus-width = <4>;
+ 	cap-sd-highspeed;
+-	max-frequency = <200000000>;
++	max-frequency = <100000000>;
+ 
+ 	non-removable;
+ 	disable-wp;
+@@ -346,7 +346,7 @@ &sd_emmc_a {
+ 	mmc-pwrseq = <&sdio_pwrseq>;
+ 
+ 	vmmc-supply = <&vsys_3v3>;
+-	vqmmc-supply = <&vddao_1v8>;
++	vqmmc-supply = <&vsys_3v3>;
+ 
+ 	brcmf: wifi@1 {
+ 		reg = <1>;
+-- 
+2.25.1
+

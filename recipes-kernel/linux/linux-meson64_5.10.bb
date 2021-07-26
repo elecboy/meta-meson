@@ -20,19 +20,9 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0060-HACK-set-meson-g12-cma-pool-to-896MB.patch \
 	   file://01-10-soc-sunxi-convert-to-devm_platform_ioremap_resource.patch \
 	   file://dts-meson-add-watchdog-to-g12-common-dtsi.patch.txt.patch \
-	   file://0001-add-qihua-s905d3-dts-based-on-khadas-vim3l.patch \
-	   file://0002-add-build-qihua-s905d3-dtb.patch \
-	   file://0003-qihua-s905d3-eth-phy-add-reset-pin.patch \
-	   file://0004-qihua-s905d3-enable-otg-usb-host.patch \
-	   file://0005-qihua-s905d3-sdio-up-max-freq.patch \
-	   file://0006-qihua-s905d3-fix-led-and-kbd.patch \
-	   file://0007-qihua-s905d3-fix-i2c-clear-vim-mcu.patch \
-	   file://0008-mt-sports-cle-v4-based-on-qihua-s905d3.patch \
-	   file://0009-g12-add-uart_ao_b-pins.patch \
-	   file://0010-enable-uart_ao_b-and-uart_c.patch \
-	   file://0011-update-qihua-s905d3-based-board-aliases.patch \
-	   file://0012-qihua-s905d3-regulator-fix.patch \
-	   file://0013-qihua-s905d3-SDIO-WiFi-freq-and-vqmmc-supply-fix.patch \
+	   file://0001-g12-add-uart_ao_b-pins.patch \
+	   file://0002-add-qihua-s905d3-and-mt-sports-cle-v4-dts.patch \
+	   file://0003-add-qihua-s905d3-and-sports-cle-v4-dts-build.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

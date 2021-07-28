@@ -1,7 +1,7 @@
 From 4e0aa8b9984ae9844facc169fd899e794d498c3f Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Mon, 26 Jul 2021 14:08:27 +0800
-Subject: [PATCH 2/4] add qihua s905d3 and mt sports cle v4 dts
+Subject: [PATCH 2/5] add qihua s905d3 and mt sports cle v4 dts
 
 ---
  .../boot/dts/amlogic/meson-qihua-s905d3.dtsi  | 445 ++++++++++++++++++

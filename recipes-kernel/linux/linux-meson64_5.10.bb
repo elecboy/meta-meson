@@ -6,8 +6,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
 DEPENDS += "rsync-native"
 
-SRCREV_meson = "71046eac2db9aeccf10763d034a1a123911c9a81"
-LINUX_VERSION = "5.10.53"
+SRCREV_meson = "08277b9dde633e1447e96b8cb89da2b40f96ae69"
+LINUX_VERSION = "5.10.54"
 
 # Linux stable tree
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=linux-5.10.y;name=meson \
@@ -23,6 +23,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0001-g12-add-uart_ao_b-pins.patch \
 	   file://0002-add-qihua-s905d3-and-mt-sports-cle-v4-dts.patch \
 	   file://0003-add-qihua-s905d3-and-sports-cle-v4-dts-build.patch \
+           file://0004-add-sports-cle-v4-gpio-and-led.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

@@ -1,0 +1,132 @@
+From 2f76b6894927292843e246bee6be679e7ddb4937 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Tue, 27 Jul 2021 14:02:51 +0800
+Subject: [PATCH 4/5] add sports cle v4 gpio and led
+
+---
+ .../dts/amlogic/meson-sm1-sports-cle-v4.dts   | 89 ++++++++++++++++++-
+ 1 file changed, 86 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index fc4167c8c3f1..7ed991c5751d 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -45,9 +45,9 @@ vddcpu: regulator-vddcpu {
+ 		regulator-always-on;
+ 	};
+ 
+-	usb_pwr: regulator-usb_pwr {
++	nrf_pwr: regulator-nrf_pwr {
+ 		compatible = "regulator-fixed";
+-		regulator-name = "USB_PWR";
++		regulator-name = "NRF_PWR";
+ 		regulator-min-microvolt = <5000000>;
+ 		regulator-max-microvolt = <5000000>;
+ 		vin-supply = <&vcc_5v>;
+@@ -56,7 +56,21 @@ usb_pwr: regulator-usb_pwr {
+ 		enable-active-high;
+ 	};
+ 
++	leds {
++		compatible = "gpio-leds";
+ 
++		led-wan {
++			label = "mt-sports:wan";
++			gpios = <&gpio GPIOA_12 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "heartbeat";
++		};
++
++		led-ble {
++			label = "mt-sports:ble";
++			gpios = <&gpio GPIOA_13 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "default-on";
++		};
++	};
+ };
+ 
+ &cpu0 {
+@@ -118,7 +132,7 @@ &uart_C {
+ };
+ 
+ &usb2_phy0 {
+-	phy-supply = <&usb_pwr>;
++	phy-supply = <&nrf_pwr>;
+ };
+ 
+ &usb2_phy1 {
+@@ -133,3 +147,72 @@ &usb {
+ 	status = "okay";
+ 	dr_mode = "host";
+ };
++
++&gpio {
++	gpio-line-names =
++		/* GPIOZ */
++		"", "", "", "", "", "", "", "",
++		"", "", "", "", "", "", "","",
++		/* GPIOH */
++		"", "", "", "",
++		"ESP_PRG_EN", /* GPIOH_4 */
++		"ESP_PRG_ID0", /* GPIOH_5 */
++		"UART_EE_C_RX", /* GPIOH_6 */
++		"UART_EE_C_TX", /* GPIOH_7 */
++		"",
++		/* BOOT */
++		"", "", "", "", "", "", "", "",
++		"", "", "", "", "", "", "", "",
++		/* GPIOC */
++		"", "", "", "", "", "", "", "",
++		/* GPIOA */
++		"", "", "", "", "", "", "",
++		"NRF_PWR_EN", /* GPIOA_7 */
++		"NRF_DFU", /* GPIOA_8 */
++		"NRF_SWC", /* GPIOA_9 */
++		"NRF_SWD", /* GPIOA_10 */
++		"",
++		"",
++		"",
++		"", /* GPIOA_14 */
++		"", /* GPIOA_15 */
++		/* GPIOX */
++		"", /* GPIOX_0 */
++		"", /* GPIOX_1 */
++		"", /* GPIOX_2 */
++		"", /* GPIOX_3 */
++		"", /* GPIOX_4 */
++		"",  /* GPIOX_5 */
++		"", /* GPIOX_6 */
++		"", /* GPIOX_7 */
++		"", /* GPIOX_8 */
++		"", /* GPIOX_9 */
++		"", /* GPIOX_10 */
++		"", /* GPIOX_11 */
++		"",  /* GPIOX_12 */
++		"", /* GPIOX_13 */
++		"", /* GPIOX_14 */
++		"", /* GPIOX_15 */
++		"", /* GPIOX_16 */
++		"",  /* GPIOX_17 */
++		"",  /* GPIOX_18 */
++		""; /* GPIOX_19 */
++
++};
++
++&gpio_ao {
++	gpio-line-names =
++		/* GPIOAO */
++		"", "", "",
++		"PWR_KEY", /* GPIOAO_3 */
++		"", /* GPIOAO_4 */
++		"",
++		"FORCE_PWR_ON", /* GPIOAO_6 */
++		"REQ_PWR_OFF", /* GPIOAO_7 */
++		"UART_B_TX", /* GPIOAO_8 */
++		"UART_B_RX", /* GPIOAO_9 */
++		"",
++		"SYS_LED",  /* GPIOAO_11 */
++		/* GPIOE */
++		"", "", "";
++};
+-- 
+2.25.1
+

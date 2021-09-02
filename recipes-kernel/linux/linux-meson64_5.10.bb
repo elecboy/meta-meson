@@ -25,6 +25,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0003-add-qihua-s905d3-and-sports-cle-v4-dts-build.patch \
            file://0004-add-sports-cle-v4-gpio-and-led.patch \
            file://0005-qihua-s905d3-regulator-fix.patch \
+           file://0006-fix-8821cs-drv-build.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

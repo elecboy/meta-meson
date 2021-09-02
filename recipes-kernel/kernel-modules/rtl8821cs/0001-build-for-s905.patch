@@ -1,0 +1,34 @@
+From 5cba56d6465b0c4daeef8dcdaf12a172801c83d0 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Thu, 2 Sep 2021 09:24:51 +0800
+Subject: [PATCH] build for s905
+
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 2010c20..050be7e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -136,7 +136,7 @@ CONFIG_LAYER2_ROAMING = y
+ #bit0: ROAM_ON_EXPIRED, #bit1: ROAM_ON_RESUME, #bit2: ROAM_ACTIVE
+ CONFIG_ROAMING_FLAG = 0x3
+ ###################### Platform Related #######################
+-CONFIG_PLATFORM_I386_PC = y
++CONFIG_PLATFORM_I386_PC = n
+ CONFIG_PLATFORM_ANDROID_X86 = n
+ CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
+ CONFIG_PLATFORM_JB_X86 = n
+@@ -196,7 +196,7 @@ CONFIG_PLATFORM_HISILICON_HI3798 = n
+ CONFIG_PLATFORM_NV_TK1 = n
+ CONFIG_PLATFORM_NV_TK1_UBUNTU = n
+ CONFIG_PLATFORM_RTL8197D = n
+-CONFIG_PLATFORM_AML_S905 = n
++CONFIG_PLATFORM_AML_S905 = y
+ CONFIG_PLATFORM_ZTE_ZX296716 = n
+ ########### CUSTOMER ################################
+ CONFIG_CUSTOMER_HUAWEI_GENERAL = n
+-- 
+2.25.1
+

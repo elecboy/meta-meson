@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 
 PV = "5.12.0-8"
 SRCREV = "4354e9529610f5d8d963f4095d77576111edffe4"
-SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8192cu-fixes.git;protocol=ssh \
+SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8821cs_wifi_linux.git;protocol=ssh \
             file://0001-build-for-s905.patch \
            "
 

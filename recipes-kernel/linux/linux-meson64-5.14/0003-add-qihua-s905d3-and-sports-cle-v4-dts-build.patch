@@ -1,0 +1,22 @@
+From 9f26fb88c46afb35022ed763e21a6011b20f597e Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Mon, 26 Jul 2021 14:09:01 +0800
+Subject: [PATCH 3/6] add qihua s905d3 and sports cle v4 dts build
+
+---
+ arch/arm64/boot/dts/amlogic/Makefile | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
+index faa0a79a34f5..c4d90b917c9a 100644
+--- a/arch/arm64/boot/dts/amlogic/Makefile
++++ b/arch/arm64/boot/dts/amlogic/Makefile
+@@ -54,3 +54,5 @@ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-odroid-c4.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-odroid-hc4.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-sei610.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-a1-ad401.dtb
++dtb-$(CONFIG_ARCH_MESON) += meson-sm1-qihua-s905d3.dtb
++dtb-$(CONFIG_ARCH_MESON) += meson-sm1-sports-cle-v4.dtb
+-- 
+2.25.1
+

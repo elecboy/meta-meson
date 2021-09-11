@@ -1,0 +1,64 @@
+From c31f9b70bf4d968e65f0a264336d278913184fb8 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Mon, 26 Jul 2021 14:07:22 +0800
+Subject: [PATCH 1/6] g12 add uart_ao_b pins
+
+---
+ .../boot/dts/amlogic/meson-g12-common.dtsi    | 41 +++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+index 00c6f53290d4..68aa3dafd57d 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+@@ -1936,6 +1936,47 @@ mux {
+ 						};
+ 					};
+ 
++					uart_ao_b_tx_2_pins: uart-b-tx-2-ao {
++						mux {
++							groups = "uart_ao_b_tx_2";
++							function = "uart_ao_b";
++							bias-disable;
++						};
++					};
++
++					uart_ao_b_rx_3_pins: uart-b-rx-3-ao {
++						mux {
++							groups = "uart_ao_b_rx_3";
++							function = "uart_ao_b";
++							bias-disable;
++						};
++					};
++
++					uart_ao_b_tx_8_pins: uart-b-tx-8-ao {
++						mux {
++							groups = "uart_ao_b_tx_8";
++							function = "uart_ao_b";
++							bias-disable;
++						};
++					};
++
++					uart_ao_b_rx_9_pins: uart-b-rx-9-ao {
++						mux {
++							groups = "uart_ao_b_rx_9";
++							function = "uart_ao_b";
++							bias-disable;
++						};
++					};
++
++					uart_ao_b_cts_rts_pins: uart-ao-b-cts-rts {
++						mux {
++							groups = "uart_ao_b_cts",
++								 "uart_ao_b_rts";
++							function = "uart_ao_b";
++							bias-disable;
++						};
++					};
++
+ 					pwm_a_e_pins: pwm-a-e {
+ 						mux {
+ 							groups = "pwm_a_e";
+-- 
+2.25.1
+

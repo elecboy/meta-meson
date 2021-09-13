@@ -1,0 +1,28 @@
+From f1ca425cfe760c145db9f53652dc77ef4c78823e Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Mon, 13 Sep 2021 20:32:43 +0800
+Subject: [PATCH 7/7] remove sd_emmc_a patch, uboot fix it
+
+---
+ arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index 2ba93a56962a..d2022e760939 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -119,11 +119,6 @@ &pwm_AO_cd {
+ 	status = "okay";
+ };
+ 
+-&sd_emmc_a {
+-	/* sd-uhs-sdr50; */
+-	max-frequency = <50000000>;
+-};
+-
+ &ethmac {
+ 	status = "disable";
+ };
+-- 
+2.25.1
+

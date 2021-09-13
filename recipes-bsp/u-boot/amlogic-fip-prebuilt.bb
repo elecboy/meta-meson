@@ -35,8 +35,8 @@ DEPLOY_CMD_amlogic-s400="do_deploy_axg"
 
 LIC_FILES_CHKSUM = "file://lepotato/blx_fix.sh;md5=12ad2eef4a1dcc98f9eda15224b92836"
 
-SRC_URI = "git://github.com/LibreELEC/amlogic-boot-fip.git"
-SRCREV = "3384f1bc82fc554ed1fa0716bd821e1a2a350db2"
+SRC_URI = "git://github.com/elecboy/amlogic-boot-fip.git"
+SRCREV = "1a79fb8bf475e332606a86ad37f74aef23c395a9"
 
 S = "${WORKDIR}/git"
 

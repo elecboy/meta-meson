@@ -6,8 +6,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
 DEPENDS += "rsync-native"
 
-SRCREV_meson = "44a32dcb2fb5598dc8b61645852df0ea829aeace"
-LINUX_VERSION = "5.10.66"
+SRCREV_meson = "faf816b0f8d0fa8ea24f579fb6a51e5ed3efd750"
+LINUX_VERSION = "5.10.67"
 
 # Linux stable tree
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=linux-5.10.y;name=meson \
@@ -27,6 +27,8 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
            file://0005-qihua-s905d3-regulator-fix.patch \
            file://0006-fix-8821cs-drv-build.patch \
 	   file://0007-remove-sd_emmc_a-patch-uboot-fix-it.patch \
+	   file://0008-SDIO-WiFi-use-lte_vdd.patch \
+	   file://0009-fix-mmc-order.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

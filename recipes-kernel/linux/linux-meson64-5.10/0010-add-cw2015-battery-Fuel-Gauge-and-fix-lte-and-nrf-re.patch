@@ -1,0 +1,84 @@
+From f063b61c4223b874bf6df966469c74b2f497dbeb Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Tue, 21 Sep 2021 17:16:44 +0800
+Subject: [PATCH 10/10] add cw2015 battery Fuel Gauge and fix lte and nrf
+ regulator
+
+---
+ .../dts/amlogic/meson-sm1-sports-cle-v4.dts   | 41 ++++++++++++++++---
+ 1 file changed, 35 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index 933eb0d5e0bc..d56089476546 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -48,7 +48,14 @@ vddcpu: regulator-vddcpu {
+ 		regulator-always-on;
+ 	};
+ 
+-	lte_vdd: regulator-tflash_vdd {
++        bat: battery {
++                compatible = "simple-battery";
++                charge-full-design-microamp-hours = <9800000>;
++                voltage-max-design-microvolt = <4200000>;
++                voltage-min-design-microvolt = <3000000>;
++        };
++
++	lte_vdd: regulator-lte_vdd {
+                 compatible = "regulator-fixed";
+ 
+                 regulator-name = "LTE_VDD";
+@@ -68,8 +75,9 @@ nrf_pwr: regulator-nrf_pwr {
+ 		regulator-max-microvolt = <5000000>;
+ 		vin-supply = <&vcc_5v>;
+ 
+-		gpio = <&gpio GPIOA_7 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio GPIOA_9 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
++		regulator-always-on;
+ 	};
+ 
+ 	leds {
+@@ -187,10 +195,10 @@ &gpio {
+ 		"", "", "", "", "", "", "", "",
+ 		/* GPIOA */
+ 		"", "", "", "", "", "", "",
+-		"NRF_PWR_EN", /* GPIOA_7 */
+-		"NRF_DFU", /* GPIOA_8 */
+-		"NRF_SWC", /* GPIOA_9 */
+-		"NRF_SWD", /* GPIOA_10 */
++		"NRF_SWD", /* GPIOA_7 */
++		"NRF_SWC", /* GPIOA_8 */
++		"NRF_PWR_EN", /* GPIOA_9 */
++		"NRF_DFU", /* GPIOA_10 */
+ 		"",
+ 		"",
+ 		"",
+@@ -240,3 +248,24 @@ &gpio_ao {
+ &sd_emmc_a {
+        vmmc-supply = <&lte_vdd>;
+ };
++
++&i2c3 {
++	cw2015@62 {
++		status = "okay";
++		compatible = "cellwise,cw2015";
++		reg = <0x62>;
++		cellwise,battery-profile = /bits/ 8 <
++			0x17 0x67 0x80 0x73 0x6E 0x6C 0x6B 0x63
++			0x77 0x51 0x5C 0x58 0x50 0x4C 0x48 0x36
++			0x15 0x0C 0x0C 0x19 0x5B 0x7D 0x6F 0x69
++			0x69 0x5B 0x0C 0x29 0x20 0x40 0x52 0x59
++			0x57 0x56 0x54 0x4F 0x3B 0x1F 0x7F 0x17
++			0x06 0x1A 0x30 0x5A 0x85 0x93 0x96 0x2D
++			0x48 0x77 0x9C 0xB3 0x80 0x52 0x94 0xCB
++			0x2F 0x00 0x64 0xA5 0xB5 0x11 0xF0 0x11
++		>;
++		cellwise,monitor-interval-ms = <5000>;
++		monitored-battery = <&bat>;
++		power-supplies = <&dc_in>, <&dc_in>;
++		};
++};
+-- 
+2.25.1
+

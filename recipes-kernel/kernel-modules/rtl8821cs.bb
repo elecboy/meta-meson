@@ -7,6 +7,8 @@ PV = "5.12.0-8"
 SRCREV = "4354e9529610f5d8d963f4095d77576111edffe4"
 SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8821cs_wifi_linux.git;protocol=ssh \
             file://0001-build-for-s905.patch \
+	    file://0002-modify-debug-level.patch \
+	    file://0003-disable-power-save.patch \
            "
 
 S = "${WORKDIR}/git"

@@ -9,6 +9,7 @@ SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8821cs_wifi_linux.git;
             file://0001-build-for-s905.patch \
 	    file://0002-modify-debug-level.patch \
 	    file://0003-disable-power-save.patch \
+	    file://0004-disable-P2P-and-MP.patch \
            "
 
 S = "${WORKDIR}/git"

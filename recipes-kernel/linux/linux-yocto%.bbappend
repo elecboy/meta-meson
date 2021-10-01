@@ -1,8 +1,8 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}:"
 
 SRC_URI += "file://meson64-kmeta;type=kmeta;destsuffix=meson64-kmeta"
 
-COMPATIBLE_MACHINE_append_meson-gx = "|khadas-vim3"
+COMPATIBLE_MACHINE:append_meson-gx = "|khadas-vim3"
 KMACHINE_meson-gx = "meson-gx"
 
 LINUX_VERSION_EXTENSION_append_meson-gx = "-meson64"
@@ -10,8 +10,8 @@ LINUX_VERSION_EXTENSION_append_meson-gx = "-meson64"
 SERIAL_CONSOLES = "115200;ttyAML0"
 
 # Add HDMI output support if display output is required
-KERNEL_FEATURES_append = "${@bb.utils.contains_any('DISTRO_FEATURES', 'x11 wayland', \
+KERNEL_FEATURES:append = "${@bb.utils.contains_any('DISTRO_FEATURES', 'x11 wayland', \
     ' cfg/meson-hdmi.scc', '', d)}"
 
-KERNEL_FEATURES_append = "${@bb.utils.contains('DISTRO_FEATURES', 'pci', \
+KERNEL_FEATURES:append = "${@bb.utils.contains('DISTRO_FEATURES', 'pci', \
     ' cfg/meson-pci.scc', '', d)}"

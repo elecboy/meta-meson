@@ -1,10 +1,10 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " \
 	file://brcmfmac43456-sdio.qihua,s905d3.txt \
 "
 
-do_install_append() {
+do_install:append() {
         install -m 0644 ${WORKDIR}/brcmfmac43456-sdio.*txt \
         ${D}${nonarch_base_libdir}/firmware/brcm
 }

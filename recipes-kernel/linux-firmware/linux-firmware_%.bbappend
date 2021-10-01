@@ -1,11 +1,11 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " \
 	file://brcmfmac4354-sdio.txt \
 	file://brcmfmac4356-sdio.txt \
 "
 
-do_install_append() {
+do_install:append() {
         install -m 0644 ${WORKDIR}/brcmfmac435*-sdio.txt \
         ${D}${nonarch_base_libdir}/firmware/brcm
 }

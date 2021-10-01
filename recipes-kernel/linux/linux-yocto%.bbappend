@@ -5,7 +5,7 @@ SRC_URI += "file://meson64-kmeta;type=kmeta;destsuffix=meson64-kmeta"
 COMPATIBLE_MACHINE:append_meson-gx = "|khadas-vim3"
 KMACHINE_meson-gx = "meson-gx"
 
-LINUX_VERSION_EXTENSION_append_meson-gx = "-meson64"
+LINUX_VERSION_EXTENSION:append_meson-gx = "-meson64"
 
 SERIAL_CONSOLES = "115200;ttyAML0"
 

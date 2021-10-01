@@ -5,7 +5,7 @@ DEPENDS += "bison-native bc-native dtc-native python3-native amlogic-fip"
 
 PROVIDES = "u-boot virtual/bootloader"
 
-SRC_URI_append = " \
+SRC_URI:append = " \
 	file://acs_tool.py \
 	file://fit.cfg \
 	file://fs.cfg \
@@ -354,6 +354,6 @@ DEPLOY_COMMAND_meson-gxl = "deploy_gxl"
 DEPLOY_COMMAND_meson-gxbb = "deploy_gxbb"
 DEPLOY_COMMAND_hardkernel-odroidc2 = "deploy_odroidc2"
 
-do_deploy_append_meson-gx () {
+do_deploy:append_meson-gx () {
 	${DEPLOY_COMMAND}
 }

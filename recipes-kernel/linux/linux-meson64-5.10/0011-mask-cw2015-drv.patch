@@ -1,0 +1,88 @@
+From 395df6cb3c6f91b27190e44cc863c53f3ae0fbea Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Tue, 28 Sep 2021 15:58:05 +0800
+Subject: [PATCH 11/11] mask cw2015 drv
+
+---
+ .../dts/amlogic/meson-sm1-sports-cle-v4.dts   | 38 +++++++++++++------
+ 1 file changed, 26 insertions(+), 12 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index d56089476546..71e98aa1d579 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -55,7 +55,29 @@ bat: battery {
+                 voltage-min-design-microvolt = <3000000>;
+         };
+ 
+-	lte_vdd: regulator-lte_vdd {
++        dc_charger_pins: dc_charger_pins {
++                dc_det_pin: dc-det-pin {
++                        amlogic,pins = "GPIOA_6";
++                };
++        };
++
++	power_ctrl: power_ctrl {
++		compatible = "gpio-poweroff";
++		gpios = <&gpio_ao GPIOAO_7 GPIO_ACTIVE_HIGH>;
++		timeout-ms = <3000>;
++	};
++
++        mains_charger: dc-charger {
++                compatible = "gpio-charger";
++                charger-type = "mains";
++                gpios = <&gpio GPIOA_2 GPIO_ACTIVE_LOW>;
++
++                /* Also triggered by USB charger */
++                pinctrl-names = "default";
++                pinctrl-0 = <&dc_det_pin>;
++        };
++
++        lte_vdd: regulator-lte_vdd {
+                 compatible = "regulator-fixed";
+ 
+                 regulator-name = "LTE_VDD";
+@@ -68,6 +90,7 @@ lte_vdd: regulator-lte_vdd {
+                 regulator-always-on;
+         };
+ 
++
+ 	nrf_pwr: regulator-nrf_pwr {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "NRF_PWR";
+@@ -96,15 +119,6 @@ led-ble {
+ 		};
+ 	};
+ 
+-	// gpio-restart {
+-	// 	compatible = "gpio-restart";
+-	// 	gpios = <&gpio GPIOA_3 GPIO_ACTIVE_HIGH>;
+-	// 	priority = <128>;
+-	// 	active-delay = <450>;
+-	// 	inactive-delay = <100>;
+-	// 	wait-delay = <3000>;
+-	// 	line-name = "lte-reset";
+-	// };
+ };
+ 
+ &cpu0 {
+@@ -251,7 +265,7 @@ &sd_emmc_a {
+ 
+ &i2c3 {
+ 	cw2015@62 {
+-		status = "okay";
++		status = "disable";
+ 		compatible = "cellwise,cw2015";
+ 		reg = <0x62>;
+ 		cellwise,battery-profile = /bits/ 8 <
+@@ -266,6 +280,6 @@ cw2015@62 {
+ 		>;
+ 		cellwise,monitor-interval-ms = <5000>;
+ 		monitored-battery = <&bat>;
+-		power-supplies = <&dc_in>, <&dc_in>;
++		power-supplies = <&mains_charger>;
+ 		};
+ };
+-- 
+2.25.1
+

@@ -30,6 +30,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0008-SDIO-WiFi-use-lte_vdd.patch \
 	   file://0009-fix-mmc-order.patch \
 	   file://0010-add-cw2015-battery-Fuel-Gauge-and-fix-lte-and-nrf-re.patch \
+	   file://0011-mask-cw2015-drv.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

@@ -128,4 +128,4 @@ do_install:append() {
 }
 
 PACKAGES =+ "kernel-headers"
-FILES_kernel-headers = "${exec_prefix}/src/linux*"
+FILES:kernel-headers = "${exec_prefix}/src/linux*"

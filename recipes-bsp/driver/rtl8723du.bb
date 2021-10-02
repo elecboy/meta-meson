@@ -34,4 +34,4 @@ do_install () {
     install -m 0644 ${WORKDIR}/8723du.conf ${D}${sysconfdir}/modprobe.d/
 }
 
-FILES_${PN} += "${sysconfdir}"
+FILES:${PN} += "${sysconfdir}"

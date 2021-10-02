@@ -32,4 +32,4 @@ do_install () {
     install -m 0755 ${B}/8821cs.ko ${D}/lib/modules/${KERNEL_VERSION}/8821cs.ko
 }
 
-FILES_${PN} += "${sysconfdir}"
+FILES:${PN} += "${sysconfdir}"

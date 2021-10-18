@@ -1,7 +1,7 @@
-From 6965a286f3493d8db4eedb0ac89e8d4badc2ddaf Mon Sep 17 00:00:00 2001
+From f77b366e64a3b287ee1675ec19e6321504505327 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Sat, 18 Sep 2021 16:50:09 +0800
-Subject: [PATCH 9/9] fix mmc order
+Subject: [PATCH 09/10] fix mmc order
 
 ---
  arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts | 3 +++

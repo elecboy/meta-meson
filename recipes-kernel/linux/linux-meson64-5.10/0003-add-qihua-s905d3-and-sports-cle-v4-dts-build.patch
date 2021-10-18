@@ -1,7 +1,7 @@
-From c63925a1e6db84de0fced3d42b2e318d4be24caf Mon Sep 17 00:00:00 2001
+From 1d6e4b2bb95224e26ce6b8219f2ee5c171abf5b6 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Mon, 26 Jul 2021 14:09:01 +0800
-Subject: [PATCH 3/5] add qihua s905d3 and sports cle v4 dts build
+Subject: [PATCH 03/10] add qihua s905d3 and sports cle v4 dts build
 
 ---
  arch/arm64/boot/dts/amlogic/Makefile | 2 ++

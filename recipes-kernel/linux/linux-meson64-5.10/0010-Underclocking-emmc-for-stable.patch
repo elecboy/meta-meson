@@ -1,0 +1,24 @@
+From e31c160afc7c1a736fdb43e80da0f071fe66adfc Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Tue, 19 Oct 2021 00:50:49 +0800
+Subject: [PATCH 10/10] Underclocking emmc for stable
+
+---
+ arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index 933eb0d5e0bc..2bf91cb013af 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -240,3 +240,7 @@ &gpio_ao {
+ &sd_emmc_a {
+        vmmc-supply = <&lte_vdd>;
+ };
++
++&sd_emmc_c {
++       max-frequency = <150000000>;
++};
+-- 
+2.25.1
+

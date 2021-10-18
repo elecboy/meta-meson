@@ -1,7 +1,7 @@
-From 50612010e88309da6e18a990dd40fbb72aacf9ea Mon Sep 17 00:00:00 2001
+From a88622fef87e3b3749217ee86e960ee44a9d7663 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Wed, 28 Jul 2021 21:55:11 +0800
-Subject: [PATCH 5/5] qihua s905d3 regulator fix
+Subject: [PATCH 05/10] qihua s905d3 regulator fix
 
 ---
  .../boot/dts/amlogic/meson-qihua-s905d3.dtsi  | 38 +++++++------------

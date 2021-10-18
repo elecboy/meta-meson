@@ -1,7 +1,7 @@
-From 2f76b6894927292843e246bee6be679e7ddb4937 Mon Sep 17 00:00:00 2001
+From 3a45604c4018eec7bba1c0376e4bccb545de369d Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Tue, 27 Jul 2021 14:02:51 +0800
-Subject: [PATCH 4/5] add sports cle v4 gpio and led
+Subject: [PATCH 04/10] add sports cle v4 gpio and led
 
 ---
  .../dts/amlogic/meson-sm1-sports-cle-v4.dts   | 89 ++++++++++++++++++-

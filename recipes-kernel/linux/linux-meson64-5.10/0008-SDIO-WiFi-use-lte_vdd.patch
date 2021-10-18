@@ -1,7 +1,7 @@
-From fe7a67f0e1e15cd7d7a0911aff35d87f40b2d07c Mon Sep 17 00:00:00 2001
+From 181924c03af9f724b4f767b7d80bfcb7fbb85631 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Sat, 18 Sep 2021 15:22:36 +0800
-Subject: [PATCH 8/8] SDIO WiFi use lte_vdd
+Subject: [PATCH 08/10] SDIO WiFi use lte_vdd
 
 ---
  .../dts/amlogic/meson-sm1-sports-cle-v4.dts     | 17 +++++++++++++++++

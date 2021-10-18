@@ -1,7 +1,7 @@
-From f1ca425cfe760c145db9f53652dc77ef4c78823e Mon Sep 17 00:00:00 2001
+From e6b289ed0ccfe455e9cfc01ce216b77b3043e0f0 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
 Date: Mon, 13 Sep 2021 20:32:43 +0800
-Subject: [PATCH 7/7] remove sd_emmc_a patch, uboot fix it
+Subject: [PATCH 07/10] remove sd_emmc_a patch, uboot fix it
 
 ---
  arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts | 5 -----

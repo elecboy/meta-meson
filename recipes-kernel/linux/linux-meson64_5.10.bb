@@ -6,8 +6,8 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-${PV}:"
 
 DEPENDS += "rsync-native"
 
-SRCREV_meson = "77434fe5a077f05f0851931d6a71d1098b6004f8"
-LINUX_VERSION = "5.10.74"
+SRCREV_meson = "3a9842b42e421f6496a78a42a123639cf6d7ed31"
+LINUX_VERSION = "5.10.75"
 
 # Linux stable tree
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=linux-5.10.y;name=meson \

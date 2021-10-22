@@ -30,7 +30,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0008-SDIO-WiFi-use-lte_vdd.patch \
 	   file://0009-fix-mmc-order.patch \
 	   file://0010-Underclocking-emmc-for-stable.patch \
-	   file://0011-always-enable-nrf_pwr.patch \
+	   file://0011-nrf_pwr-on-fix.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

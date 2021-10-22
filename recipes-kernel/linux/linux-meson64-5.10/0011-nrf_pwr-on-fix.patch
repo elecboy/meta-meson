@@ -1,0 +1,43 @@
+From 383bafec848f6050d3255577630e539cf0eb0467 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Fri, 22 Oct 2021 15:48:30 +0800
+Subject: [PATCH 11/11] nrf_pwr on fix
+
+---
+ arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+index 2bf91cb013af..ad97270b4a3b 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
+@@ -68,8 +68,9 @@ nrf_pwr: regulator-nrf_pwr {
+ 		regulator-max-microvolt = <5000000>;
+ 		vin-supply = <&vcc_5v>;
+ 
+-		gpio = <&gpio GPIOA_7 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio GPIOA_9 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
++		regulator-always-on;
+ 	};
+ 
+ 	leds {
+@@ -152,11 +153,14 @@ &uart_C {
+ };
+ 
+ &usb2_phy0 {
+-	phy-supply = <&nrf_pwr>;
++	phy-supply = <&dc_in>;
++	vbus-supply = <&nrf_pwr>;
++	status = "okay";
+ };
+ 
+ &usb2_phy1 {
+ 	phy-supply = <&dc_in>;
++	status = "okay";
+ };
+ 
+ &usb3_pcie_phy {
+-- 
+2.25.1
+

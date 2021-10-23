@@ -31,6 +31,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
 	   file://0009-fix-mmc-order.patch \
 	   file://0010-Underclocking-emmc-for-stable.patch \
 	   file://0011-nrf_pwr-on-fix.patch \
+	   file://0012-sports-cle-v4-gpio-name-fix.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"

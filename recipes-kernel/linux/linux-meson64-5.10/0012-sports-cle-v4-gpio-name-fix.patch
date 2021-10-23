@@ -1,17 +1,17 @@
-From 0508854ac64c76c18ab9876d77867a6bbb7f76a7 Mon Sep 17 00:00:00 2001
+From 0b35b2b6facca9dd6ac65fdc945bf83d33349c74 Mon Sep 17 00:00:00 2001
 From: changzhijie <elecboy@126.com>
-Date: Sat, 23 Oct 2021 16:30:43 +0800
+Date: Sat, 23 Oct 2021 17:21:54 +0800
 Subject: [PATCH 12/12] sports cle v4 gpio name fix
 
 ---
- .../boot/dts/amlogic/meson-sm1-sports-cle-v4.dts   | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ .../dts/amlogic/meson-sm1-sports-cle-v4.dts    | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
-index ad97270b4a3b..55099a859b42 100644
+index ad97270b4a3b..602f9c6d2ebf 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sports-cle-v4.dts
-@@ -190,12 +190,16 @@ &gpio {
+@@ -190,14 +190,18 @@ &gpio {
  		/* GPIOC */
  		"", "", "", "", "", "", "", "",
  		/* GPIOA */
@@ -20,6 +20,8 @@ index ad97270b4a3b..55099a859b42 100644
 -		"NRF_DFU", /* GPIOA_8 */
 -		"NRF_SWC", /* GPIOA_9 */
 -		"NRF_SWD", /* GPIOA_10 */
+-		"",
+-		"",
 +		"nFORCE_NRF_3.3V", /* GPIOA_0 */
  		"",
 +		"NCHG_DET", /* GPIOA_2 */
@@ -30,9 +32,11 @@ index ad97270b4a3b..55099a859b42 100644
 +		"NRF_PWR_EN", /* GPIOA_9 */
 +		"NRF_DFU", /* GPIOA_10 */
 +		"PWR_LTE_ON", /* GPIOA_11 */
- 		"",
- 		"",
++		"WAN_LED", /* GPIOA_12 */
++		"BLE_LED", /* GPIOA_13 */
  		"", /* GPIOA_14 */
+ 		"", /* GPIOA_15 */
+ 		/* GPIOX */
 -- 
 2.25.1
 

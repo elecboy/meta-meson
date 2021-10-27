@@ -2,3 +2,4 @@
 ACTION=="add", SUBSYSTEM=="leds", KERNEL=="mt-sports:ble", RUN+="/bin/chmod a+w /sys/class/leds/%k/brightness"
 ACTION=="add", SUBSYSTEM=="leds", KERNEL=="mt-sports:wan", RUN+="/bin/chmod a+w /sys/class/leds/%k/brightness"
 ACTION=="add", SUBSYSTEM=="leds", KERNEL=="x905:red:sys", RUN+="/bin/chmod a+w /sys/class/leds/%k/brightness"
+ACTION=="add", SUBSYSTEM=="gpio", KERNEL=="gpio*", RUN+="/bin/chmod a+w /dev/gpiochip*"

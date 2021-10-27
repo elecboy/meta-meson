@@ -1,5 +1,4 @@
-# allow leds control for everyone
-ACTION=="add", SUBSYSTEM=="leds", KERNEL=="mt-sports:ble", RUN+="/bin/chmod a+w /sys/class/leds/%k/brightness"
-ACTION=="add", SUBSYSTEM=="leds", KERNEL=="mt-sports:wan", RUN+="/bin/chmod a+w /sys/class/leds/%k/brightness"
-ACTION=="add", SUBSYSTEM=="leds", KERNEL=="x905:red:sys", RUN+="/bin/chmod a+w /sys/class/leds/%k/brightness"
-ACTION=="add", SUBSYSTEM=="gpio", KERNEL=="gpio*", RUN+="/bin/chmod a+w /dev/gpiochip*"
+# allow leds and gpio control for gpio group
+SUBSYSTEM=="leds", ACTION=="add", RUN+="/bin/chgrp -R gpio /sys%p", RUN+="/bin/chmod -R g=u /sys%p"
+SUBSYSTEM=="leds", ACTION=="change", RUN+="/bin/chgrp -R gpio /sys%p", RUN+="/bin/chmod -R g=u /sys%p"
+SUBSYSTEM=="gpio",NAME="gpiochip%n",OWNER="root",GROUP="gpio",MODE="0660"

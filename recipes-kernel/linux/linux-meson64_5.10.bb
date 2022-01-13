@@ -10,7 +10,7 @@ SRCREV_meson = "df395c763ba08b8b4385481af07d5d1c658dd917"
 LINUX_VERSION = "5.10.91"
 
 # Linux stable tree
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=linux-5.10.y;name=meson \
+SRC_URI = "git://mirrors.tuna.tsinghua.edu.cn/git/linux-stable.git;protocol=https;branch=linux-5.10.y;name=meson \
            file://defconfig \
 	   file://0001-Add-higher-clocks-for-SM1-family.patch \
 	   file://0031-WIP-clk-meson-g12a-fix-gp0-and-hifi-ranges.patch \

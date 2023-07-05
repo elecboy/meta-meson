@@ -1,0 +1,270 @@
+From d357eb848c959f8047960c2bec49a60b30c4eec4 Mon Sep 17 00:00:00 2001
+From: elecboy <elecboy@126.com>
+Date: Wed, 5 Jul 2023 06:46:03 +0800
+Subject: [PATCH 1/3] add qihua s922x core board support
+
+Signed-off-by: elecboy <elecboy@126.com>
+
+Upstream-Status: Pending
+---
+ .../dts/amlogic/meson-g12b-sports-cle-v41.dts | 248 ++++++++++++++++++
+ 1 file changed, 248 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts
+new file mode 100644
+index 000000000000..3cf0bddbb363
+--- /dev/null
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts
+@@ -0,0 +1,248 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 BayLibre, SAS
++ * Author: Neil Armstrong <narmstrong@baylibre.com>
++ */
++
++/dts-v1/;
++
++#include "meson-g12b-w400.dtsi"
++#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
++
++
++/ {
++	compatible = "qihua,s922x", "amlogic,s922x", "amlogic,g12b";
++	model = "MT Sports CLE V41";
++
++	aliases {
++		mmc0 = &sd_emmc_a;
++		mmc1 = &sd_emmc_b;
++		mmc2 = &sd_emmc_c;
++		serial0 = &uart_AO;
++		serial1 = &uart_AO_B;
++		serial2 = &uart_C;
++		ethernet0 = &ethmac;
++		i2c0 = &i2c3;
++	};
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	dc_in: regulator-dc_in {
++		compatible = "regulator-fixed";
++		regulator-name = "DC_IN";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++	};
++
++	vddcpu: regulator-vddcpu {
++		/*
++		 * Silergy SY8030DEC Regulator.
++		 */
++		compatible = "pwm-regulator";
++
++		regulator-name = "VDDCPU";
++		regulator-min-microvolt = <690000>;
++		regulator-max-microvolt = <1050000>;
++
++		vin-supply = <&vcc_3v3>;
++
++		pwms = <&pwm_AO_cd 1 1250 0>;
++		pwm-dutycycle-range = <100 0>;
++
++		regulator-boot-on;
++		regulator-always-on;
++	};
++
++	lte_vdd: regulator-tflash_vdd {
++                compatible = "regulator-fixed";
++
++                regulator-name = "LTE_VDD";
++                regulator-min-microvolt = <3300000>;
++                regulator-max-microvolt = <3300000>;
++
++                gpio = <&gpio GPIOA_11 GPIO_ACTIVE_HIGH>;
++                enable-active-high;
++                vin-supply = <&dc_in>;
++                regulator-always-on;
++        };
++
++	nrf_pwr: regulator-nrf_pwr {
++		compatible = "regulator-fixed";
++		regulator-name = "NRF_PWR";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		vin-supply = <&vcc_5v>;
++
++		gpio = <&gpio GPIOA_9 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++		regulator-always-on;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led-wan {
++			label = "mt-sports:wan";
++			gpios = <&gpio GPIOA_12 GPIO_ACTIVE_HIGH>;
++			default-state = "off";
++		};
++
++		led-ble {
++			label = "mt-sports:ble";
++			gpios = <&gpio GPIOA_13 GPIO_ACTIVE_HIGH>;
++			default-state = "off";
++		};
++	};
++
++	// gpio-restart {
++	// 	compatible = "gpio-restart";
++	// 	gpios = <&gpio GPIOA_3 GPIO_ACTIVE_HIGH>;
++	// 	priority = <128>;
++	// 	active-delay = <450>;
++	// 	inactive-delay = <100>;
++	// 	wait-delay = <3000>;
++	// 	line-name = "lte-reset";
++	// };
++};
++
++&pwm_AO_cd {
++	pinctrl-0 = <&pwm_ao_d_e_pins>;
++	pinctrl-names = "default";
++	clocks = <&xtal>;
++	clock-names = "clkin1";
++	status = "okay";
++};
++
++&ethmac {
++	status = "disable";
++};
++
++&uart_AO_B {
++        status = "okay";
++        pinctrl-0 = <&uart_ao_b_8_9_pins>;
++        pinctrl-names = "default";
++};
++
++&uart_C {
++		status = "okay";
++		pinctrl-0 = <&uart_c_pins>;
++		pinctrl-names = "default";
++};
++
++&usb2_phy0 {
++	phy-supply = <&dc_in>;
++	vbus-supply = <&nrf_pwr>;
++	status = "okay";
++};
++
++&usb2_phy1 {
++	phy-supply = <&dc_in>;
++	status = "okay";
++};
++
++&usb3_pcie_phy {
++	phy-supply = <&dc_in>;
++};
++
++&usb {
++	status = "okay";
++	dr_mode = "host";
++};
++
++&gpio {
++	gpio-line-names =
++		/* GPIOZ */
++		"", "", "", "", "", "", "", "",
++		"", "", "", "", "", "", "","",
++		/* GPIOH */
++		"", "", "", "",
++		"ESP_PRG_EN", /* GPIOH_4 */
++		"ESP_PRG_ID0", /* GPIOH_5 */
++		"UART_EE_C_RX", /* GPIOH_6 */
++		"UART_EE_C_TX", /* GPIOH_7 */
++		"",
++		/* BOOT */
++		"", "", "", "", "", "", "", "",
++		"", "", "", "", "", "", "", "",
++		/* GPIOC */
++		"", "", "", "", "", "", "", "",
++		/* GPIOA */
++		"nFORCE_NRF_3.3V", /* GPIOA_0 */
++		"",
++		"NCHG_DET", /* GPIOA_2 */
++		"", "", "",
++		"LTE_RST", /* GPIOA_6 */
++		"NRF_SWD", /* GPIOA_7 */
++		"NRF_SWC", /* GPIOA_8 */
++		"NRF_PWR_EN", /* GPIOA_9 */
++		"NRF_DFU", /* GPIOA_10 */
++		"PWR_LTE_ON", /* GPIOA_11 */
++		"WAN_LED", /* GPIOA_12 */
++		"BLE_LED", /* GPIOA_13 */
++		"", /* GPIOA_14 */
++		"", /* GPIOA_15 */
++		/* GPIOX */
++		"", /* GPIOX_0 */
++		"", /* GPIOX_1 */
++		"", /* GPIOX_2 */
++		"", /* GPIOX_3 */
++		"", /* GPIOX_4 */
++		"",  /* GPIOX_5 */
++		"", /* GPIOX_6 */
++		"", /* GPIOX_7 */
++		"", /* GPIOX_8 */
++		"", /* GPIOX_9 */
++		"", /* GPIOX_10 */
++		"", /* GPIOX_11 */
++		"",  /* GPIOX_12 */
++		"", /* GPIOX_13 */
++		"", /* GPIOX_14 */
++		"", /* GPIOX_15 */
++		"", /* GPIOX_16 */
++		"",  /* GPIOX_17 */
++		"",  /* GPIOX_18 */
++		""; /* GPIOX_19 */
++
++};
++
++&gpio_ao {
++	gpio-line-names =
++		/* GPIOAO */
++		"", "", "",
++		"PWR_KEY", /* GPIOAO_3 */
++		"", /* GPIOAO_4 */
++		"",
++		"FORCE_PWR_ON", /* GPIOAO_6 */
++		"REQ_PWR_OFF", /* GPIOAO_7 */
++		"UART_B_TX", /* GPIOAO_8 */
++		"UART_B_RX", /* GPIOAO_9 */
++		"",
++		"SYS_LED",  /* GPIOAO_11 */
++		/* GPIOE */
++		"", "", "";
++};
++
++&sd_emmc_a {
++       max-frequency = <200000000>;
++       vmmc-supply = <&lte_vdd>;
++	   vqmmc-supply = <&vcc_3v3>;
++};
++
++&sd_emmc_c {
++       max-frequency = <150000000>;
++};
++
++&i2c3 {
++	status = "okay";
++	pinctrl-0 = <&i2c3_sda_a_pins>, <&i2c3_sck_a_pins>;
++	pinctrl-names = "default";
++
++	rtc: rtc@51 {
++		compatible = "nxp,pcf8563";
++		reg = <0x51>;
++		#wakeup-source;
++	};
++};
+-- 
+2.34.1
+

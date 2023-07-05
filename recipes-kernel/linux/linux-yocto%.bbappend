@@ -6,6 +6,7 @@ SRC_URI += "file://add-erofs-and-overlayfs.cfg \
 	    file://add-rtl8187-8188.cfg \
 	    file://add-rtc-pcf8563.cfg \
 	    file://add-wifi-rtl8723bs.cfg \
+	    file://add-usb-ethernet-and-lte-modem.cfg \
 	    file://0001-add-qihua-s922x-core-board-support.patch \
 	    file://0002-add-qihua-s905d3-board-support.patch \
 	    file://0003-add-qihua-board-to-makefile.patch \

@@ -2,13 +2,10 @@ FILESEXTRAPATHS:prepend := "${THISDIR}:"
 
 SRC_URI += "file://meson64-kmeta;type=kmeta;destsuffix=meson64-kmeta"
 
-SRC_URI:append:sports-cle-v41 = "file://0001-add-qihua-s922x-core-board-support.patch \
+SRC_URI += "file://0001-add-qihua-s922x-core-board-support.patch \
 	    		         file://0002-add-qihua-s905d3-board-support.patch \
 				 file://0003-add-qihua-board-to-makefile.patch \
-"
-
-SRC_URI:append:sports-cle-v41 = "file://use-rtc1-as-default-rtc.cfg \
-			         file://add-erofs-and-overlayfs.cfg \
+				 file://use-rtc1-as-default-rtc.cfg \
 			      	 file://add-erofs-and-overlayfs.cfg \
 				 file://add-rtl8187-8188.cfg \
             			 file://add-rtc-pcf8563.cfg \

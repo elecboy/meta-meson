@@ -1,0 +1,27 @@
+From 2e5a6c8a98f77c44f9c9255840565bc224b9cd9a Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Sat, 25 Sep 2021 16:50:10 +0800
+Subject: [PATCH 4/4] disable P2P and MP
+
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index fe55db1..c83abaf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -52,8 +52,8 @@ CONFIG_SDIO_HCI = y
+ CONFIG_GSPI_HCI = n
+ ########################## Features ###########################
+ CONFIG_AP_MODE = y
+-CONFIG_P2P = y
+-CONFIG_MP_INCLUDED = y
++CONFIG_P2P = n
++CONFIG_MP_INCLUDED = n
+ CONFIG_POWER_SAVING = n
+ CONFIG_IPS_MODE = default
+ CONFIG_LPS_MODE = default
+-- 
+2.25.1
+

@@ -1,0 +1,25 @@
+From a09cd5934266d5970adefe762001ceb5d8497185 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Tue, 28 Sep 2021 14:10:48 +0800
+Subject: [PATCH 5/5] disable CONFIG_CONCURRENT_MODE
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index c83abaf..df3a2ce 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2230,7 +2230,7 @@ ifeq ($(CONFIG_PLATFORM_AML_S905), y)
+ EXTRA_CFLAGS += -DCONFIG_PLATFORM_AML_S905
+ EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN -fno-pic
+ # default setting for Android
+-EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
++#EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
+ EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211
+ EXTRA_CFLAGS += -DRTW_USE_CFG80211_STA_EVENT
+ # default setting for Android 5.x and later
+-- 
+2.25.1
+

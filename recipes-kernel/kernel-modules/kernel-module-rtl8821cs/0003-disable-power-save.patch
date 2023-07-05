@@ -1,0 +1,52 @@
+From f42d22f08d2bc412ca7c17fc137204f93fbd8083 Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Thu, 23 Sep 2021 08:18:56 +0800
+Subject: [PATCH 3/3] disable power save
+
+---
+ Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 9c9813b..fe55db1 100644
+--- a/Makefile
++++ b/Makefile
+@@ -54,7 +54,7 @@ CONFIG_GSPI_HCI = n
+ CONFIG_AP_MODE = y
+ CONFIG_P2P = y
+ CONFIG_MP_INCLUDED = y
+-CONFIG_POWER_SAVING = y
++CONFIG_POWER_SAVING = n
+ CONFIG_IPS_MODE = default
+ CONFIG_LPS_MODE = default
+ CONFIG_USB_AUTOSUSPEND = n
+@@ -297,7 +297,7 @@ EXTRA_CFLAGS += -DCONFIG_RTL8188E
+ 
+ _HAL_INTFS_FILES +=	hal/HalPwrSeqCmd.o \
+ 					hal/$(RTL871X)/Hal8188EPwrSeq.o\
+- 					hal/$(RTL871X)/$(RTL871X)_xmit.o\
++					hal/$(RTL871X)/$(RTL871X)_xmit.o\
+ 					hal/$(RTL871X)/$(RTL871X)_sreset.o
+ 
+ _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
+@@ -486,7 +486,7 @@ endif
+ EXTRA_CFLAGS += -DCONFIG_RTL8821A
+ 
+ _HAL_INTFS_FILES +=	hal/rtl8812a/hal8821a_fw.o
+-		
++
+ endif
+ 
+ ifeq ($(CONFIG_BT_COEXIST), y)
+@@ -955,7 +955,7 @@ _HAL_INTFS_FILES +=	\
+ 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_SUB_NAME)_led.o \
+ 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_SUB_NAME)_xmit.o \
+ 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_SUB_NAME)_recv.o
+-			
++
+ ifeq ($(CONFIG_PCI_HCI), y)
+ _HAL_INTFS_FILES += hal/$(RTL871X)/$(HCI_NAME)/$(HCI_NAME)_ops_linux.o
+ else
+-- 
+2.25.1
+

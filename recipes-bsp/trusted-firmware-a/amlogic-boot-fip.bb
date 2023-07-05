@@ -4,6 +4,7 @@ PROVIDES = "virtual/trusted-firmware-a"
 LICENSE = "Proprietary"
 
 DEPENDS = "u-boot python3-native"
+DEPENDS += "qemu-native"
 
 # TOFIX only build on x86_64 host
 

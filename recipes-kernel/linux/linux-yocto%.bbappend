@@ -2,6 +2,15 @@ FILESEXTRAPATHS:prepend := "${THISDIR}:"
 
 SRC_URI += "file://meson64-kmeta;type=kmeta;destsuffix=meson64-kmeta"
 
+SRC_URI += "file://add-erofs-and-overlayfs.cfg \
+	    file://add-rtl8187-8188.cfg \
+	    file://add-rtc-pcf8563.cfg \
+	    file://add-wifi-rtl8723bs.cfg \
+	    file://0001-add-qihua-s922x-core-board-support.patch \
+	    file://0002-add-qihua-s905d3-board-support.patch \
+	    file://0003-add-qihua-board-to-makefile.patch \
+"
+
 COMPATIBLE_MACHINE:append:meson-gx = "|meson64all"
 KMACHINE:meson-gx = "meson-gx"
 

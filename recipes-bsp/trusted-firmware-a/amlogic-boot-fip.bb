@@ -51,7 +51,8 @@ MODEL:hardkernel-odroidn2plus = "odroid-n2-plus"
 MODEL:seirobotics-sei510 = "sei510"
 MODEL:seirobotics-sei610 = "sei610"
 MODEL:radxa-zero = "radxa-zero"
-MODEL:sports-cle-v41 = "qihua-s922x"
+#MODEL:sports-cle-v41 = "qihua-s922x"
+MODEL:sports-cle-v41 = "beelink-s922x"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2dbd68496cc5ed3e68e855100cb86363"
 

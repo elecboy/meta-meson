@@ -7,9 +7,10 @@ inherit module
 
 PV = "5.12.0-8"
 SRCREV = "807e576afa42e38066402aaf94140662b4bc2f3c"
+#SRCREV = "4354e9529610f5d8d963f4095d77576111edffe4"
+
 SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8821cs_wifi_linux.git;protocol=ssh;branch=master \
             file://0001-build-for-s905.patch \
-	    file://0002-modify-debug-level.patch \
 	    file://0003-disable-power-save.patch \
 	    file://0004-disable-P2P-and-MP.patch \
 	    file://0005-disable-CONFIG_CONCURRENT_MODE.patch \

@@ -1,0 +1,24 @@
+From 4671cbcac82228352ac3c843751011aa6da3752d Mon Sep 17 00:00:00 2001
+From: changzhijie <elecboy@126.com>
+Date: Thu, 2 Sep 2021 09:16:15 +0800
+Subject: [PATCH 06/10] fix 8821cs drv build
+
+---
+ kernel/sched/core.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/kernel/sched/core.c b/kernel/sched/core.c
+index 6db20a66e8e6..b4b23d274fe4 100644
+--- a/kernel/sched/core.c
++++ b/kernel/sched/core.c
+@@ -5502,6 +5502,7 @@ int sched_setscheduler(struct task_struct *p, int policy,
+ {
+ 	return _sched_setscheduler(p, policy, param, true);
+ }
++EXPORT_SYMBOL_GPL(sched_setscheduler);
+ 
+ int sched_setattr(struct task_struct *p, const struct sched_attr *attr)
+ {
+-- 
+2.25.1
+

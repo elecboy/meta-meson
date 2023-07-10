@@ -15,3 +15,6 @@ SRC_URI:sei610:append = " \
 SRC_URI:append:sports-cle-v41 = " \
         file://0001-add-sports-cle-v41-support.patch \
 "
+SRC_URI:append:sports-cle-v40 = " \
+        file://0002-add-sports-cle-v40-support.patch \
+"

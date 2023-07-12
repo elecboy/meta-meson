@@ -14,6 +14,7 @@ SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8821cs_wifi_linux.git;
 	    file://0003-disable-power-save.patch \
 	    file://0004-disable-P2P-and-MP.patch \
 	    file://0005-disable-CONFIG_CONCURRENT_MODE.patch \
+        file://rtl8821cs.conf \
            "
 
 S = "${WORKDIR}/git"
@@ -29,7 +30,10 @@ do_compile () {
 }
 
 do_install () {
+    install -m 0755 -d ${D}${sysconfdir}/modprobe.d
+    install -m 0644 ${WORKDIR}/rtl8821cs.conf ${D}${sysconfdir}/modprobe.d
     install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/extra
     install -m 0755 ${B}/8821cs.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/extra/8821cs.ko
 }
 
+FILES:${PN} += "${sysconfdir}/modprobe.d/"

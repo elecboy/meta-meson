@@ -16,5 +16,7 @@ SRC_URI:append:sports-cle-v41 = " \
         file://0001-add-sports-cle-v41-support.patch \
 "
 SRC_URI:append:sports-cle-v40 = " \
-        file://0002-add-sports-cle-v40-support.patch \
+        file://u-boot-2023-04-add-qihua-s905d3.patch \
+		file://mmc.cfg \
+		file://fs.cfg \
 "

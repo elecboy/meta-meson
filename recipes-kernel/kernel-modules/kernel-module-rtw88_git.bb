@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171d
 
 SRC_URI = "git://github.com/lwfinger/rtw88.git;protocol=https;branch=master"
 
-SRCREV = "7ca1ec0e768f083e4a2116d6978021814b83bb74"
+SRCREV = "7746e2fa87a6687c068c9c746f6efbeee2616496"
 
 S = "${WORKDIR}/git"
 

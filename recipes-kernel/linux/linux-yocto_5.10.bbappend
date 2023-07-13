@@ -10,7 +10,7 @@ SRC_URI += " \
         file://01-10-soc-sunxi-convert-to-devm_platform_ioremap_resource.patch \
         file://dts-meson-add-watchdog-to-g12-common-dtsi.patch.txt.patch \
         file://0001-g12-add-uart_ao_b-pins.patch \
-        file://0001-add-sports-cle-v41-support.patch \
+        file://0001-add-sports-cle-v40-v41-dts.patch \
 	file://0006-fix-8821cs-drv-build.patch \
         file://use-rtc1-as-default-rtc.cfg \
         file://add-erofs-and-overlayfs.cfg \

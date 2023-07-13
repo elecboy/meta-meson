@@ -1,5 +1,5 @@
-#KBRANCH ?= "v5.10/standard/base"
-KBRANCH ?= "v5.10/base"
+KBRANCH ?= "v5.10/standard/base"
+#KBRANCH ?= "v5.10/base"
 
 require recipes-kernel/linux/linux-yocto.inc
 
@@ -23,11 +23,11 @@ SRCREV_machine:qemuriscv32 ?= "dafc025b033585311d1693255c80b60b690b0e54"
 SRCREV_machine:qemux86 ?= "dafc025b033585311d1693255c80b60b690b0e54"
 SRCREV_machine:qemux86-64 ?= "dafc025b033585311d1693255c80b60b690b0e54"
 SRCREV_machine:qemumips64 ?= "ee18c4343db52d5846a0f332cd6df26a6f72dd45"
-#SRCREV_machine ?= "dafc025b033585311d1693255c80b60b690b0e54"
+# SRCREV_machine ?= "dafc025b033585311d1693255c80b60b690b0e54"
 SRCREV_meta ?= "c1168e10ecf30b123a341ca500966eebf3fe2cc2"
 
-SRCREV_machine ?= "381518b4a9165cd793599c1668c82079fcbcbe1f"
-
+# SRCREV_machine ?= "381518b4a9165cd793599c1668c82079fcbcbe1f"
+SRCREV_machine ?= "cfcf13659ada4eee41e11484404de999ce571196"
 
 SRC_URI = "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=${KBRANCH}; \
            git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-5.10;destsuffix=${KMETA}"

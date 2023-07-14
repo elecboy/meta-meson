@@ -5,6 +5,7 @@ SRC_URI += "file://meson64-kmeta;type=kmeta;destsuffix=meson64-kmeta"
 SRC_URI += "file://0001-add-qihua-s922x-core-board-support.patch \
 			file://0002-add-qihua-s905d3-board-support.patch \
 			file://0003-add-qihua-board-to-makefile.patch \
+			file://down-sports-cle-v40-sdio-freq-for-ap6256.patch \
 			file://use-rtc1-as-default-rtc.cfg \
 			file://add-erofs-and-overlayfs.cfg \
 			file://add-rtl8187-8188.cfg \
@@ -12,6 +13,7 @@ SRC_URI += "file://0001-add-qihua-s922x-core-board-support.patch \
 			file://add-usb-ethernet-and-lte-modem.cfg \
 			file://add-i2c-char-device.cfg \
 			file://add-wifi-rtl8723bs.cfg \
+			file://add-brcm-debug.cfg \
 "
 
 COMPATIBLE_MACHINE:append:meson-gx = "|meson64all"

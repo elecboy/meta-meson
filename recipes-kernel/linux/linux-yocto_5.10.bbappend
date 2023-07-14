@@ -12,6 +12,7 @@ SRC_URI += " \
         file://0001-g12-add-uart_ao_b-pins.patch \
         file://0001-add-sports-cle-v40-v41-dts.patch \
 	file://0006-fix-8821cs-drv-build.patch \
+        file://down-sports-cle-v40-sdio-freq-for-ap6256.patch \
         file://use-rtc1-as-default-rtc.cfg \
         file://add-erofs-and-overlayfs.cfg \
         file://add-rtl8187-8188.cfg \

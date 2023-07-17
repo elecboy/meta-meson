@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171d
 inherit module
 
 PV = "5.12.0-8"
-SRCREV = "807e576afa42e38066402aaf94140662b4bc2f3c"
+SRCREV = "05546fe4f5e2409b6065951806451a3ff654c433"
 #SRCREV = "4354e9529610f5d8d963f4095d77576111edffe4"
 
 SRC_URI = "git://git@git.witcent.net:10022/changzhijie/rtl8821cs_wifi_linux.git;protocol=ssh;branch=master \

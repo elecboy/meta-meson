@@ -1,0 +1,36 @@
+From 025ba6f890384f6ccc5281e57bd1f00f378f13f0 Mon Sep 17 00:00:00 2001
+From: elecboy <elecboy@126.com>
+Date: Tue, 18 Jul 2023 14:43:23 +0800
+Subject: [PATCH 4/4] remove cle v41 sdio(sd_emmc_a) dts desc
+
+Upstream-Status: Pending
+
+---
+ arch/arm/dts/meson-g12b-sports-cle-v41.dts | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/arch/arm/dts/meson-g12b-sports-cle-v41.dts b/arch/arm/dts/meson-g12b-sports-cle-v41.dts
+index 3cf0bddbb3..9602b408f2 100644
+--- a/arch/arm/dts/meson-g12b-sports-cle-v41.dts
++++ b/arch/arm/dts/meson-g12b-sports-cle-v41.dts
+@@ -15,9 +15,6 @@
+ 	model = "MT Sports CLE V41";
+ 
+ 	aliases {
+-		mmc0 = &sd_emmc_a;
+-		mmc1 = &sd_emmc_b;
+-		mmc2 = &sd_emmc_c;
+ 		serial0 = &uart_AO;
+ 		serial1 = &uart_AO_B;
+ 		serial2 = &uart_C;
+@@ -226,6 +223,7 @@
+ };
+ 
+ &sd_emmc_a {
++	status = "disabled";
+        max-frequency = <200000000>;
+        vmmc-supply = <&lte_vdd>;
+ 	   vqmmc-supply = <&vcc_3v3>;
+-- 
+2.34.1
+

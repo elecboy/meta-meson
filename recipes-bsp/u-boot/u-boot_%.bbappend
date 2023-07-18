@@ -14,9 +14,10 @@ SRC_URI:sei610:append = " \
 "
 SRC_URI:append:sports-cle-v41 = " \
         file://0001-add-sports-cle-v41-support.patch \
+		file://0004-remove-cle-v41-sdio-sd_emmc_a-dts-desc.patch \
 "
 SRC_URI:append:sports-cle-v40 = " \
-        file://u-boot-2023-04-add-qihua-s905d3.patch \
+		file://u-boot-2023-04-add-qihua-s905d3.patch \
 		file://mmc.cfg \
 		file://fs.cfg \
 "

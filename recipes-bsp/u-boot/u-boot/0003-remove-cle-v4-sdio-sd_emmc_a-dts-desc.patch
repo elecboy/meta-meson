@@ -1,0 +1,70 @@
+From 25a97e37ba7c3e325294e06cb4a1578714ac0532 Mon Sep 17 00:00:00 2001
+From: elecboy <elecboy@126.com>
+Date: Tue, 11 Jul 2023 10:34:37 +0800
+Subject: [PATCH 3/4] remove cle v4 sdio(sd_emmc_a) dts desc
+
+Upstream-Status: Pending
+
+---
+ arch/arm/dts/meson-qihua-s905d3.dtsi     | 30 ------------------------
+ arch/arm/dts/meson-sm1-sports-cle-v4.dts |  3 ---
+ 2 files changed, 33 deletions(-)
+
+diff --git a/arch/arm/dts/meson-qihua-s905d3.dtsi b/arch/arm/dts/meson-qihua-s905d3.dtsi
+index 7599c252e5..4aeab7c2fd 100644
+--- a/arch/arm/dts/meson-qihua-s905d3.dtsi
++++ b/arch/arm/dts/meson-qihua-s905d3.dtsi
+@@ -314,36 +314,6 @@
+ 	vref-supply = <&vddao_1v8>;
+ };
+ 
+-/* SDIO */
+-&sd_emmc_a {
+-	status = "okay";
+-	pinctrl-0 = <&sdio_pins>;
+-	pinctrl-1 = <&sdio_clk_gate_pins>;
+-	pinctrl-names = "default", "clk-gate";
+-	#address-cells = <1>;
+-	#size-cells = <0>;
+-
+-	bus-width = <4>;
+-	cap-sd-highspeed;
+-	max-frequency = <200000000>;
+-
+-	non-removable;
+-	disable-wp;
+-
+-	/* WiFi firmware requires power to be kept while in suspend */
+-	keep-power-in-suspend;
+-
+-	mmc-pwrseq = <&sdio_pwrseq>;
+-
+-	vmmc-supply = <&vcc_3v3>;
+-	vqmmc-supply = <&vcc_3v3>;
+-
+-	brcmf: wifi@1 {
+-		reg = <1>;
+-		compatible = "brcm,bcm4329-fmac";
+-	};
+-};
+-
+ /* SD card */
+ &sd_emmc_b {
+ 	status = "okay";
+diff --git a/arch/arm/dts/meson-sm1-sports-cle-v4.dts b/arch/arm/dts/meson-sm1-sports-cle-v4.dts
+index 22b6d197e4..5096748180 100644
+--- a/arch/arm/dts/meson-sm1-sports-cle-v4.dts
++++ b/arch/arm/dts/meson-sm1-sports-cle-v4.dts
+@@ -15,9 +15,6 @@
+ 	model = "MT Sports CLE V4";
+ 
+ 	aliases {
+-		mmc0 = &sd_emmc_a;
+-		mmc1 = &sd_emmc_b;
+-		mmc2 = &sd_emmc_c;
+ 		serial0 = &uart_AO;
+ 		serial1 = &uart_AO_B;
+ 		serial2 = &uart_C;
+-- 
+2.34.1
+

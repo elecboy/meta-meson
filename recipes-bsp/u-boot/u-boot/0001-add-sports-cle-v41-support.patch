@@ -1,9 +1,7 @@
 From 4df147cffddfec2992e2fa8f1aca198ef6d4c696 Mon Sep 17 00:00:00 2001
 From: elecboy <elecboy@126.com>
 Date: Wed, 5 Jul 2023 14:57:05 +0800
-Subject: [PATCH 1/2] add sports-cle-v41 support
-
-Signed-off-by: elecboy <elecboy@126.com>
+Subject: [PATCH 1/4] add sports-cle-v41 support
 
 Upstream-Status: Pending
 

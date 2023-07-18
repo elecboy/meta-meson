@@ -1,9 +1,7 @@
 From 1722112bbedb9f25bbfdee892629888c0a86e93e Mon Sep 17 00:00:00 2001
 From: elecboy <elecboy@126.com>
 Date: Tue, 11 Jul 2023 07:33:23 +0800
-Subject: [PATCH 2/2] add sports cle v40 support
-
-Signed-off-by: elecboy <elecboy@126.com>
+Subject: [PATCH 2/4] add sports cle v40 support
 
 Upstream-Status: Pending
 

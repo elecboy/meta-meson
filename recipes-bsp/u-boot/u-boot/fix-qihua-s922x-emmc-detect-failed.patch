@@ -1,0 +1,15 @@
+Upstream-Status: Pending
+
+diff --git a/drivers/mmc/meson_gx_mmc.c b/drivers/mmc/meson_gx_mmc.c
+index fcf4f03d1e..834c3fcaf3 100644
+--- a/drivers/mmc/meson_gx_mmc.c
++++ b/drivers/mmc/meson_gx_mmc.c
+@@ -74,7 +74,7 @@ static void meson_mmc_config_clock(struct mmc *mmc)
+ 		meson_mmc_clk |= CLK_CO_PHASE_180;
+ 
+ 	/* 180 phase tx clock */
+-	meson_mmc_clk |= CLK_TX_PHASE_000;
++	meson_mmc_clk |= CLK_TX_PHASE_180;
+ 
+ 	/* clock settings */
+ 	meson_mmc_clk |= clk_src;

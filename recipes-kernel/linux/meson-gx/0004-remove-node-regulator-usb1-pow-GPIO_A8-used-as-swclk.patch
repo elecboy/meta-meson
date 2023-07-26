@@ -1,0 +1,27 @@
+From 35f96e83548e47d5ca0b02114f10d26865e9bdf5 Mon Sep 17 00:00:00 2001
+From: elecboy <elecboy@126.com>
+Date: Wed, 26 Jul 2023 15:47:42 +0800
+Subject: [PATCH 4/4] remove node regulator-usb1-pow, GPIO_A8 used as swclk
+
+Signed-off-by: elecboy <elecboy@126.com>
+Upstream-Status: Pending
+---
+ arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts
+index 3cf0bddbb363..27f0d69dc985 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-sports-cle-v41.dts
+@@ -29,6 +29,8 @@ chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
+ 
++	/delete-node/ regulator-usb1-pow;
++
+ 	dc_in: regulator-dc_in {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "DC_IN";
+-- 
+2.34.1
+

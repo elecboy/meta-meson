@@ -5,6 +5,7 @@ SRC_URI += "file://meson64-kmeta;type=kmeta;destsuffix=meson64-kmeta"
 SRC_URI += "file://0001-add-qihua-s922x-core-board-support.patch \
 			file://0002-add-qihua-s905d3-board-support.patch \
 			file://0003-add-qihua-board-to-makefile.patch \
+			file://0004-remove-node-regulator-usb1-pow-GPIO_A8-used-as-swclk.patch \
 			file://down-sports-cle-v40-sdio-freq-for-ap6256.patch \
 			file://use-rtc1-as-default-rtc.cfg \
 			file://add-erofs-and-overlayfs.cfg \

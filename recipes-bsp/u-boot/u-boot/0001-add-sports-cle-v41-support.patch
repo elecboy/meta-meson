@@ -1,7 +1,7 @@
-From 4df147cffddfec2992e2fa8f1aca198ef6d4c696 Mon Sep 17 00:00:00 2001
+From 36681dc05e47c8d37efd773d4113b5af1d9d25b2 Mon Sep 17 00:00:00 2001
 From: elecboy <elecboy@126.com>
-Date: Wed, 5 Jul 2023 14:57:05 +0800
-Subject: [PATCH 1/4] add sports-cle-v41 support
+Date: Fri, 28 Jul 2023 07:12:06 +0800
+Subject: [PATCH] add sports-cle-v41 support
 
 Upstream-Status: Pending
 
@@ -20,17 +20,17 @@ Upstream-Status: Pending
  create mode 100644 configs/sports-cle-v41_defconfig
 
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index c160e884bf..e475dcb441 100644
+index 480269fa60..31f978727e 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -212,6 +212,7 @@ dtb-$(CONFIG_ARCH_MESON) += \
- 	meson-g12b-odroid-n2.dtb \
+@@ -221,6 +221,7 @@ dtb-$(CONFIG_ARCH_MESON) += \
  	meson-g12b-odroid-n2l.dtb \
  	meson-g12b-odroid-n2-plus.dtb \
+ 	meson-g12b-radxa-zero2.dtb \
 +	meson-g12b-sports-cle-v41.dtb \
+ 	meson-sm1-bananapi-m2-pro.dtb \
  	meson-sm1-bananapi-m5.dtb \
  	meson-sm1-khadas-vim3l.dtb \
- 	meson-sm1-odroid-c4.dtb \
 diff --git a/arch/arm/dts/meson-g12b-sports-cle-v41.dts b/arch/arm/dts/meson-g12b-sports-cle-v41.dts
 new file mode 100644
 index 0000000000..3cf0bddbb3

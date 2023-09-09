@@ -15,6 +15,7 @@ SRC_URI += "file://0001-add-qihua-s922x-core-board-support.patch \
 			file://add-i2c-char-device.cfg \
 			file://add-wifi-rtl8723bs.cfg \
 			file://add-brcm-debug.cfg \
+			file://add-zram.cfg \
 "
 
 COMPATIBLE_MACHINE:append:meson-gx = "|meson64all"
